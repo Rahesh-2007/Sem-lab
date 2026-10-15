@@ -41,10 +41,9 @@ function App(){
         <div key={i}>
           <p>{c.name}--{c.dest}--{c.price}</p>
           <button onClick={()=>deleteby(i)}>Delete</button>
+           <input type="text" onChange={(e) => search(e.target.value)} />
           </div>
       ))}
-
-       <input type="text" onChange={(e) => search(e.target.value)} />
     </div> 
   );
 }
