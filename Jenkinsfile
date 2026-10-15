@@ -1,25 +1,23 @@
-pipeline{
-    agent any{
-        Stages{
-
-             Stage('Install Dependencies'){
-                Steps{
-                    bat 'npm install'
-                }
-            }
-             Stage('Build'){
-                Steps{
-                    bat 'npm run build'
-                }
-            }
-        }
-        Post{
-            sucess{
-                echo "successfully build"
-            }
-            failure{
-                echo "failed to build"
-            }
-        }
+pipeline {
+  agent any
+  stages {
+    stage('Install Dependencies') {
+      steps {
+        bat 'npm install'
+      }
     }
+    stage('Build') {
+      steps {
+        bat 'npm run build'
+      }
+    }
+  }
+  post {
+    success {
+      echo 'successfully build'
+    }
+    failure {
+      echo 'failed to build'
+    }
+  }
 }
