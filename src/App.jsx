@@ -25,9 +25,11 @@ function App(){
   }
 
   function search(name){
-    const user = flight.map((c)=>c.name===name);
-    return user;
-  }
+  const q = (name || "").toLowerCase();
+  const user = flight.filter((c) => c.name.toLowerCase().includes(q));
+  setflight(user);
+  return user;
+}
   return(
     <div>
       <form onSubmit={Add}>
@@ -41,10 +43,13 @@ function App(){
         <div key={i}>
           <p>{c.name}--{c.dest}--{c.price}</p>
           <button onClick={()=>deleteby(i)}>Delete</button>
-           <input type="text" onChange={(e) => search(e.target.value)} />
+          
           </div>
       ))}
+      <input type="text" onChange={(e) => search(e.target.value)} />
     </div> 
+
+    
   );
 }
 export default App;
