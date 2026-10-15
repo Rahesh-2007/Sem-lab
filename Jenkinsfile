@@ -4,7 +4,7 @@ pipeline{
             Stage('Clone'){
                 Steps{
                 branch: "main",
-                url: ""
+                url: "https://github.com/Rahesh-2007/Sem-lab.git"
                 }
             }
              Stage('Install Dependencies'){

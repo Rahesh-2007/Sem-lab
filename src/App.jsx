@@ -24,11 +24,11 @@ function App(){
     setflight(flight.filter((_,i)=>(i!==id)))
   }
 
-  // function search(name){
-  //   const user = [flight.map((c,i)=>(
-  //     c.name===name
-  //   ))]
-  // }
+  function search(name){
+    const user = [flight.map((c,i)=>(
+      c.name===name
+    ))]
+  }
   return(
     <div>
       <form onSubmit={add}>
@@ -39,9 +39,9 @@ function App(){
            <button type="submit">Submit</button>
       </form>
 
-      {/* {flight.map((c,i)=><div><p>{c.name}--{c.source}---{c.dest}---{c.price}</p><button onClick={()=>deleteby(i)}></button> </div>)} */}
+      { {flight.map((c,i)=><div><p>{c.name}--{c.source}---{c.dest}---{c.price}</p><button onClick={()=>deleteby(i)}></button> </div>)} }
 
-       {/* <input type="text" onChange={()=>search(input)}></input> */}
+       { <input type="text" onChange={()=>search(input)}></input> }
     </div> 
   )
 }
